@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
@@ -8,6 +10,8 @@ import { SearchMovieListComponent } from './components/search-movie-list/search-
 import { WatchlistListComponent } from './components/watchlist-list/watchlist-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
+import { SearchComponent } from './components/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +21,13 @@ import { ButtonComponent } from './components/button/button.component';
     SearchMovieListComponent,
     WatchlistListComponent,
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent,
+    SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

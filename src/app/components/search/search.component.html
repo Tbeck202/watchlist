@@ -1,0 +1,7 @@
+<app-search-movie-input></app-search-movie-input>
+
+<app-search-movie-list
+    *ngFor="let movie of movies"
+    [movie]="movie"
+    (onSearchMovies)="searchMovies(title)"
+></app-search-movie-list>

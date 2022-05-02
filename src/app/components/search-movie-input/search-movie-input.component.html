@@ -1,1 +1,6 @@
-<p>search-movie-input works!</p>
+<form class="search-form" (ngSubmit)="submitSearch()">
+    <label for="title">Search Movies by Title</label>
+    <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Enter Movie Title">
+
+    <input type="submit" value="Search">
+</form>
