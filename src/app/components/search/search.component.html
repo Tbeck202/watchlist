@@ -1,7 +1,10 @@
-<app-search-movie-input></app-search-movie-input>
+<app-search-movie-input (onSearchMovies)="searchMovies($event)"></app-search-movie-input>
 
-<app-search-movie-list
-    *ngFor="let movie of movies"
-    [movie]="movie"
+<ul *ngIf="movies">
+    <li *ngFor="let movie of movies">{{ movie.Title }}, {{movie.Year}} <app-button (btnClick)="addMovie()"></app-button> </li>
+</ul>
+
+<!-- <app-search-movie-list
+    (movies)="movies"
     (onSearchMovies)="searchMovies(title)"
-></app-search-movie-list>
+></app-search-movie-list> -->

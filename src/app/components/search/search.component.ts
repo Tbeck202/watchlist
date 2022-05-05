@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieSearch } from 'src/app/MovieSearch';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
 
@@ -20,14 +20,20 @@ export class SearchComponent implements OnInit {
 
   searchMovies(title: string) {
     console.log(`Title: ${title}`);
-    
+    this.movies = []
     this.movieSearchService.searchMovies(title)
     .subscribe(
       (moviesFromSearch) => (
-        console.log(moviesFromSearch)
-        // moviesFromSearch.forEach(movie => this.movies.push(movie))
+        // console.log(moviesFromSearch.Search)
+        moviesFromSearch.Search.forEach((movie: any) => this.movies.push(movie))
+        
       )
     )
+  }
+
+  addMovie(){
+    console.log('Hi from search component');
+    
   }
 
 }

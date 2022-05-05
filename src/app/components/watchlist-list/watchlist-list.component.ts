@@ -12,4 +12,9 @@ export class WatchlistListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addMovie(){
+    console.log(`Hello from watchlist list component`);
+    
+  }
+
 }

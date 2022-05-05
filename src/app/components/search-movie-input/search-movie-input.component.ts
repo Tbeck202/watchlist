@@ -22,16 +22,17 @@ export class SearchMovieInputComponent implements OnInit {
       alert('Please enter a search term')
     }
 
-    console.log(this.title);
+    console.log(`SearchMovieInputComponent says: ${this.title}`);
     
-    this.emitSearch(this.title)
+    // this.emitSearch(this.title)
+    this.onSearchMovies.emit(this.title)
     
   }
 
-  emitSearch(title: string){
-    console.log('emit serch');
+  // emitSearch(title: string){
+  //   console.log('emit serch');
     
-    this.onSearchMovies.emit(title)
-  }
+  //   this.onSearchMovies.emit(title)
+  // }
 
 }
