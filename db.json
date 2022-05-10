@@ -1,0 +1,24 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Hook",
+      "director": "Steven Spielberg",
+      "synopsis": "Peter Pan got old, yo!",
+      "releaseDate": "1995",
+      "watched": true
+    },
+    {
+      "title": "The Big Lebowski",
+      "releaseDate": "1998",
+      "watched": false,
+      "id": 2
+    },
+    {
+      "title": "Big",
+      "releaseDate": "1988",
+      "watched": false,
+      "id": 3
+    }
+  ]
+}
