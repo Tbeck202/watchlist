@@ -24,6 +24,7 @@ export class WatchlistService {
   }
 
   addMovie(movie: Movie): Observable<Movie[]> {
+    console.log('watchlist service addMovie()');
     return this.http.post<Movie[]>(this.dbUrl, movie, httpOptions)
   }
 }

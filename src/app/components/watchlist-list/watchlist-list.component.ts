@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,  } from '@angular/core';
 import { Movie } from 'src/app/Movie';
 import { MovieSearch } from 'src/app/MovieSearch';
 
@@ -11,7 +11,7 @@ import { WatchlistService } from 'src/app/services/watchlist.service';
 })
 export class WatchlistListComponent implements OnInit {
 
-  movies: Movie[] = []
+  @Input() movies: Movie[] = []
   movieSearch: MovieSearch[] = []
 
   constructor(private watchlistService: WatchlistService) { }
@@ -20,6 +20,13 @@ export class WatchlistListComponent implements OnInit {
     this.watchlistService.getMovies().subscribe((movies) => (this.movies = movies));
   }
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('onzChanges');
+    
+  //   console.log(changes);
+    
+  //   this.watchlistService.getMovies().subscribe((movies) => (this.movies = movies));
+  // }
   
 
 }
