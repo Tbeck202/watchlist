@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovieSearch } from 'src/app/MovieSearch';
 import { Movie } from 'src/app/Movie';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
-import { WatchlistService } from 'src/app/services/watchlist.service';
 
 
 @Component({
@@ -18,7 +17,7 @@ export class SearchComponent implements OnInit {
   movies: MovieSearch[] = []
   title: string;
 
-  constructor(private movieSearchService: MovieSearchService, private watchlistService: WatchlistService) { }
+  constructor(private movieSearchService: MovieSearchService) { }
 
   ngOnInit(): void {
   }
@@ -39,26 +38,9 @@ export class SearchComponent implements OnInit {
   addMovie(movie: MovieSearch){
     // console.log(movie);
     this.addMovieToDb.emit(movie)
+    this.movies = []
   }
 
-  // addMovie(movie: MovieSearch){
-    // console.log('Hi from search component');
-    // console.log(movie);
-    // const newMovie = {
-    //   title: movie.Title,
-    //   director: movie.Director,
-    //   releaseDate: movie.Year,
-    //   plot: movie.Plot,
-    //   synopsis: movie.Plot,
-    //   watched: false
-    // }
-    
-    // console.log('search component addMovie()');
-    
-    // this.watchlistService.addMovie(newMovie).subscribe()
-    // this.watchlistService.addMovie(newMovie).subscribe((movie) => console.log(movie));
-    
-  // }
     
   
 

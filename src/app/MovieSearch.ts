@@ -3,6 +3,7 @@ export interface MovieSearch {
     Director: string;
     Plot: string;
     Year: string;
+    imdbID: string;
     watched: boolean;
 }
 

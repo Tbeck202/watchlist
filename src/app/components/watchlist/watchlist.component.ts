@@ -11,34 +11,20 @@ import { WatchlistService } from 'src/app/services/watchlist.service';
 })
 export class WatchlistComponent implements OnInit {
 
-  movies: Movie[]
+  movies: Movie[] = []
   movie: MovieSearch
+  movieSearch: MovieSearch[] = []
 
   constructor(private watchlistService: WatchlistService) { }
 
   ngOnInit(): void {
-    console.log('watchlist component onInit');
-    
-    this.watchlistService.getMovies().subscribe((movies) => (this.movies = movies));
+    // console.log('watchlist component onInit');
+    this.watchlistService.getMovies().subscribe((moviesFromDb) => (this.movies = moviesFromDb));
   }
 
   addMovie(movie: MovieSearch){
-    console.log('Hi from search component');
-    console.log(movie);
-    const newMovie = {
-      title: movie.Title,
-      director: movie.Director,
-      releaseDate: movie.Year,
-      plot: movie.Plot,
-      synopsis: movie.Plot,
-      watched: false
-    }
-    
-    console.log('watchlist component addMovie()');
-    
-    this.watchlistService.addMovie(newMovie).subscribe()
-    // this.watchlistService.addMovie(newMovie).subscribe((movie) => console.log(movie));
-    
+    // console.log(movie);
+    this.watchlistService.addMovie(movie).subscribe((movie) => (this.movies.push(movie)))
   }
 
 }

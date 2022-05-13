@@ -15,11 +15,12 @@ export class MovieSearchService {
 
   constructor(private http: HttpClient) { }
 
-  // searchMovies(title: string): Observable<MovieSearch[]> {
   searchMovies(title: string): Observable<any> {
-
-    console.log('Hi from the service');
     
-    return this.http.get<MovieSearch[]>(`${this.apiUrl}?s=${title}&apikey=${this.key}`)
+    return this.http.get<MovieSearch>(`${this.apiUrl}?s=${title}&apikey=${this.key}`)
+  }
+
+  getMovieData(movie: MovieSearch): Observable<any> {
+    return  this.http.get<MovieSearch>(`${this.apiUrl}?i=${movie.imdbID}&apikey=${this.key}`)
   }
 }
