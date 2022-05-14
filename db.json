@@ -9,25 +9,39 @@
       "watched": true
     },
     {
+      "title": "The Big Lebowski",
+      "director": "Joel Coen, Ethan Coen",
+      "releaseDate": "1998",
+      "synopsis": "Ultimate L.A. slacker Jeff \"The Dude\" Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire's missing",
+      "imdbId": "tt0118715",
+      "watched": false,
       "id": 2
     },
     {
+      "title": "Jaws",
+      "director": "Steven Spielberg",
+      "releaseDate": "1975",
+      "synopsis": "When a killer shark unleashes chaos on a beach community off Long Island, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+      "imdbId": "tt0073195",
+      "watched": false,
       "id": 3
     },
     {
-      "source": {
-        "source": {
-          "source": {}
-        }
-      },
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "releaseDate": "2010",
+      "synopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+      "imdbId": "tt1375666",
+      "watched": false,
       "id": 4
     },
     {
-      "source": {
-        "source": {
-          "source": {}
-        }
-      },
+      "title": "Candyman",
+      "director": "Bernard Rose",
+      "releaseDate": "1992",
+      "synopsis": "The Candyman, a murderous soul with a hook for a hand, is accidentally summoned to reality by a skeptic grad student researching the monster's myth.",
+      "imdbId": "tt0103919",
+      "watched": false,
       "id": 5
     }
   ]

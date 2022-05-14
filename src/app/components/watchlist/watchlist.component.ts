@@ -3,6 +3,7 @@ import { Movie } from 'src/app/Movie';
 import { MovieSearch } from 'src/app/MovieSearch';
 
 import { WatchlistService } from 'src/app/services/watchlist.service';
+import { MovieSearchService } from 'src/app/services/movie-search.service';
 
 @Component({
   selector: 'app-watchlist',
@@ -14,8 +15,9 @@ export class WatchlistComponent implements OnInit {
   movies: Movie[] = []
   movie: MovieSearch
   movieSearch: MovieSearch[] = []
+  populatedMovie: MovieSearch 
 
-  constructor(private watchlistService: WatchlistService) { }
+  constructor(private watchlistService: WatchlistService, private movieSearchService: MovieSearchService) { }
 
   ngOnInit(): void {
     // console.log('watchlist component onInit');
@@ -23,8 +25,16 @@ export class WatchlistComponent implements OnInit {
   }
 
   addMovie(movie: MovieSearch){
-    // console.log(movie);
-    this.watchlistService.addMovie(movie).subscribe((movie) => (this.movies.push(movie)))
+    
+    this.movieSearchService.getMovieData(movie)
+    .subscribe((movie) => 
+      this.watchlistService.addMovie(movie).subscribe((movie) => (this.movies.push(movie)))
+    );
+  }
+
+  populateMovie(movie: MovieSearch){
+
+    return this.movieSearchService.getMovieData(movie)
   }
 
 }

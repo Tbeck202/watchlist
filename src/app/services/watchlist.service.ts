@@ -21,6 +21,7 @@ export class WatchlistService {
   private dbUrl = 'http://localhost:5000/movies'
   private apiUrl = `http://www.omdbapi.com/`
   private key = `${environment.omdbApiKey}`
+  populatedMovie: Movie
 
   constructor(private http: HttpClient, private movieSearchService: MovieSearchService) { }
 
@@ -29,13 +30,14 @@ export class WatchlistService {
   }
 
   addMovie(movie: MovieSearch): Observable<Movie> {
-    
-    
-    let movieData: { director: string; title: string; releaseDate: string; synopsis: string; } 
-    
-    // STILL TRYING FO FIGURE OUT HOW TO POPULATE THE REST OF THE DATA VIA ANOTHER API CALL
-    const newMovie = this.movieSearchService.getMovieData(movie)
-    // console.log(newMovie);
+    const newMovie = {
+      title: movie.Title,
+      director: movie.Director,
+      releaseDate: movie.Year,
+      synopsis: movie.Plot,
+      imdbId:movie.imdbID,
+      watched: false
+    }
     
     return this.http.post<Movie>(this.dbUrl, newMovie, httpOptions)
   }
