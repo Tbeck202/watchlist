@@ -1,7 +1,11 @@
-<app-watchlist-list
+<!-- <app-watchlist-list
 [(ngModel)]="movies"
 ngDefaultControl
 (addMovieToDb)="addMovie(movie)"
-></app-watchlist-list>
+></app-watchlist-list> -->
 
-<app-search></app-search>
+<ul>
+    <li *ngFor="let movie of movies">{{movie.title}}</li>
+</ul>
+
+<app-search (addMovieToDb)="addMovie($event)"></app-search>
