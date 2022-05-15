@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from 'src/app/Movie';
 import { MovieSearch } from 'src/app/MovieSearch';
+import { Subscription } from 'rxjs';
 
 import { WatchlistService } from 'src/app/services/watchlist.service';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
@@ -16,12 +17,18 @@ export class WatchlistComponent implements OnInit {
   movie: MovieSearch
   movieSearch: MovieSearch[] = []
   populatedMovie: MovieSearch 
-  btnColor: string = 'red'
+  btnColor: string = '#EF767A'
   btnText: string = 'Delete'
-  watchedBtnColor: string = 'orange'
-  watchedBtnText: string = 'Mark as Watched'
+  watchedBtnColor: string = '#49DCB1'
+  watchedBtnText: string = 'Watched'
+  subscription: Subscription
+  showSearchForm: boolean = false
 
-  constructor(private watchlistService: WatchlistService, private movieSearchService: MovieSearchService) { }
+  constructor(private watchlistService: WatchlistService, private movieSearchService: MovieSearchService) { 
+    this.subscription = this.movieSearchService
+      .onToggle()
+      .subscribe((value) => (this.showSearchForm = value));
+  }
 
   ngOnInit(): void {
     // console.log('watchlist component onInit');

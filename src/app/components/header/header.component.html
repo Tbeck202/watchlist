@@ -1,3 +1,9 @@
-<h1>{{title}}</h1>
-
-<app-button></app-button>
+<header>
+    <h1>{{title}}</h1>
+    
+    <app-button
+    btnColor="{{ showSearchForm ? '#EF767A' : '#49BEAA' }}" 
+    btnText="{{ showSearchForm ? 'Hide Search' : 'Add a Movie' }}"
+    (btnClick)="toggleSearchForm()">
+    </app-button>
+</header>

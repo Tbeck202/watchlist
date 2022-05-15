@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieSearchService } from 'src/app/services/movie-search.service';
+import { Subscription } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-header',
@@ -7,10 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'My Watchlist'
+  // btnColor: string = 'green'
+  // btnText: string = 'Add a movie'
+  showSearchForm: boolean = false;
+  subscription: Subscription
 
-  constructor() { }
+  constructor(private movieSearchService: MovieSearchService) { 
+    this.subscription = this.movieSearchService
+      .onToggle()
+      .subscribe((value) => (this.showSearchForm = value));
+  }
 
   ngOnInit(): void {
+  }
+
+  toggleSearchForm() {
+    this.movieSearchService.toggleSearchForm()
   }
 
 }

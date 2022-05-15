@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Movie } from '../Movie';
 import { MovieSearch } from '../MovieSearch';
 import { environment } from 'src/environments/environment';
@@ -21,8 +21,9 @@ export class WatchlistService {
   private dbUrl = 'http://localhost:5000/movies'
   private apiUrl = `http://www.omdbapi.com/`
   private key = `${environment.omdbApiKey}`
+  
   populatedMovie: Movie
-
+  
   constructor(private http: HttpClient, private movieSearchService: MovieSearchService) { }
 
   getMovies(): Observable<Movie[]> {
@@ -52,4 +53,6 @@ export class WatchlistService {
     
     return this.http.delete<Movie>(`${this.dbUrl}/${movie.id}`)
   }
+
+  
 }

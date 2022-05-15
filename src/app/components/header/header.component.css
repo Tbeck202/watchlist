@@ -1,0 +1,14 @@
+header {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 4B7595 */
+h1 {
+    width: 40%;
+    max-width: 300px;
+    color: #070B0E;
+}

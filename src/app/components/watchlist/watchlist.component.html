@@ -2,17 +2,19 @@
 <ul>
     <li *ngFor="let movie of movies">
         <span>{{movie.title}} </span>
-        <app-button 
-        (btnClick)="markWatched(movie)"
-        btnColor="{{ watchedBtnColor }}" 
-        btnText="{{ watchedBtnText }}">
-        </app-button>
-        <app-button 
-        (btnClick)="removeFromList(movie)"
-        btnColor="{{ btnColor }}" 
-        btnText="{{ btnText }}">
-        </app-button>
+        <div class="btn-container">
+            <app-button 
+            (btnClick)="markWatched(movie)"
+            btnColor="{{ watchedBtnColor }}" 
+            btnText="{{ watchedBtnText }}">
+            </app-button>
+            <app-button 
+            (btnClick)="removeFromList(movie)"
+            btnColor="{{ btnColor }}" 
+            btnText="{{ btnText }}">
+            </app-button>
+        </div>
     </li>
 </ul>
 
-<app-search (addMovieToDb)="addMovie($event)"></app-search>
+<app-search *ngIf="showSearchForm" (addMovieToDb)="addMovie($event)"></app-search>

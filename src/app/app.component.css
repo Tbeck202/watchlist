@@ -1,0 +1,24 @@
+/* 
+
+{"Black":"000000","Flame":"cf5c36","Lavender Blush":"eee5e9","Gray Web":"7c7c7c","Gold Crayola":"efc88b"}
+
+*/
+
+
+* {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #f1f5f8;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.container {
+    width: 80%;
+    /* border: 1px solid purple; */
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}

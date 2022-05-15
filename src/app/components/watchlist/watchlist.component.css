@@ -1,3 +1,23 @@
+
+
+
+ul {
+    padding: none;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .watched {
     text-decoration: line-through;
 }
