@@ -1,7 +1,13 @@
 <app-search-movie-input (onSearchMovies)="searchMovies($event)"></app-search-movie-input>
 
 <ul *ngIf="movies">
-    <li *ngFor="let movie of movies">{{ movie.Title }}, {{movie.Year}} <app-button (btnClick)="addMovie(movie)"></app-button> </li>
+    <li *ngFor="let movie of movies">{{ movie.Title }}, {{movie.Year}} 
+        <app-button 
+        (btnClick)="addMovie(movie)"
+        btnColor="{{ btnColor }}"
+        btnText="{{ btnText }}"
+        ></app-button> 
+    </li>
 </ul>
 
 <!-- <app-search-movie-list

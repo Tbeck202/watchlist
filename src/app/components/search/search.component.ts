@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   movieDb: Movie[] = []
   movies: MovieSearch[] = []
   title: string;
+  btnColor: string = 'magenta'
+  btnText: string = 'Add to list'
 
   constructor(private movieSearchService: MovieSearchService) { }
 

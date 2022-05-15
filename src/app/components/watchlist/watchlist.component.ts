@@ -16,6 +16,10 @@ export class WatchlistComponent implements OnInit {
   movie: MovieSearch
   movieSearch: MovieSearch[] = []
   populatedMovie: MovieSearch 
+  btnColor: string = 'red'
+  btnText: string = 'Delete'
+  watchedBtnColor: string = 'orange'
+  watchedBtnText: string = 'Mark as Watched'
 
   constructor(private watchlistService: WatchlistService, private movieSearchService: MovieSearchService) { }
 
@@ -35,6 +39,17 @@ export class WatchlistComponent implements OnInit {
   populateMovie(movie: MovieSearch){
 
     return this.movieSearchService.getMovieData(movie)
+  }
+
+  markWatched(movie: Movie){
+    movie.watched = !movie.watched
+    this.watchlistService.toggleWatched(movie)
+    .subscribe()
+  }
+
+  removeFromList(movie: Movie){
+    this.watchlistService.removeFromDb(movie)
+    .subscribe(() => this.movies = this.movies.filter((m) => m.id !== movie.id))
   }
 
 }

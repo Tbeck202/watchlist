@@ -35,10 +35,21 @@ export class WatchlistService {
       director: movie.Director,
       releaseDate: movie.Year,
       synopsis: movie.Plot,
-      imdbId:movie.imdbID,
+      imdbId: movie.imdbID,
       watched: false
     }
     
     return this.http.post<Movie>(this.dbUrl, newMovie, httpOptions)
+  }
+
+  toggleWatched(movie: Movie){
+    const url = `${this.dbUrl}/${movie.id}`
+    return this.http.put<Movie>(url, movie, httpOptions)
+  }
+
+  removeFromDb(movie: Movie){
+    console.log('Watchlist service removeFromDb');
+    
+    return this.http.delete<Movie>(`${this.dbUrl}/${movie.id}`)
   }
 }

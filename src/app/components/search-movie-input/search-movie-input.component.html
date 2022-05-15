@@ -2,5 +2,5 @@
     <label for="title">Search Movies by Title</label>
     <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Enter Movie Title">
 
-    <input type="submit" value="Search">
+    <input type="submit" value="Search" [ngStyle]="{ 'background-color': btnColor }">
 </form>

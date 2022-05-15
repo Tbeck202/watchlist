@@ -18,31 +18,13 @@
       "id": 2
     },
     {
-      "title": "Jaws",
-      "director": "Steven Spielberg",
-      "releaseDate": "1975",
-      "synopsis": "When a killer shark unleashes chaos on a beach community off Long Island, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
-      "imdbId": "tt0073195",
-      "watched": false,
+      "title": "Goodfellas",
+      "director": "Martin Scorsese",
+      "releaseDate": "1990",
+      "synopsis": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+      "imdbId": "tt0099685",
+      "watched": true,
       "id": 3
-    },
-    {
-      "title": "Inception",
-      "director": "Christopher Nolan",
-      "releaseDate": "2010",
-      "synopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
-      "imdbId": "tt1375666",
-      "watched": false,
-      "id": 4
-    },
-    {
-      "title": "Candyman",
-      "director": "Bernard Rose",
-      "releaseDate": "1992",
-      "synopsis": "The Candyman, a murderous soul with a hook for a hand, is accidentally summoned to reality by a skeptic grad student researching the monster's myth.",
-      "imdbId": "tt0103919",
-      "watched": false,
-      "id": 5
     }
   ]
 }
