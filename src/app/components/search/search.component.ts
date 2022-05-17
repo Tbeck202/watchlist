@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovieSearch } from 'src/app/MovieSearch';
 import { Movie } from 'src/app/Movie';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
+import { error } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class SearchComponent implements OnInit {
   movieDb: Movie[] = []
   movies: MovieSearch[] = []
   title: string;
-  btnColor: string = 'magenta'
+  btnColor: string = '#49DCB1'
   btnText: string = 'Add to list'
 
   constructor(private movieSearchService: MovieSearchService) { }

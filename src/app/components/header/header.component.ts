@@ -25,6 +25,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnDestroy() {
+    // Unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+  }
+
   toggleSearchForm() {
     this.movieSearchService.toggleSearchForm()
   }

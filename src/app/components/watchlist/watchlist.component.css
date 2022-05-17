@@ -2,7 +2,8 @@
 
 
 ul {
-    padding: none;
+    width: 450px;
+    padding-left: 0;
 }
 
 li {
@@ -10,12 +11,38 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid #070b0e;
+    color: #070b0e;
 }
+
+.li-info {
+    width: 70%;
+    margin: 3px;
+}
+
+.li-info-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.li-info-bottom {
+    color: #5079a5;
+    
+}
+
 
 .btn-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: flex-end;
+    width: 30%;
+}
+
+.synopsis {
+    display: block;
 }
 
 .watched {

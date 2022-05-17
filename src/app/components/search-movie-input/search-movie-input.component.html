@@ -1,6 +1,8 @@
 <form class="search-form" (ngSubmit)="submitSearch()">
-    <label for="title">Search Movies by Title</label>
-    <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Enter Movie Title">
+    <div class="form-input">
+        <label for="title">Search Movies</label>
+        <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Enter Movie Title">
+    </div>
 
-    <input type="submit" value="Search" [ngStyle]="{ 'background-color': btnColor }">
+    <input class="submit" type="submit" value="Search" [ngStyle]="{ 'background-color': btnColor }">
 </form>

@@ -1,15 +1,38 @@
 <app-search-movie-input (onSearchMovies)="searchMovies($event)"></app-search-movie-input>
 
 <ul *ngIf="movies">
-    <li *ngFor="let movie of movies">{{ movie.Title }}, {{movie.Year}} 
-        <app-button 
-        (btnClick)="addMovie(movie)"
-        btnColor="{{ btnColor }}"
-        btnText="{{ btnText }}"
-        ></app-button> 
+    <li *ngFor="let movie of movies"> 
+        <div class="li-info">
+            <div class="li-info-top">{{movie.Title}} </div>
+            <div class="li-info-bottom">{{ movie.Year }}</div>
+        </div>
+        <div class="btn-container">
+            <app-button 
+            (btnClick)="addMovie(movie)"
+            btnColor="{{ btnColor }}"
+            btnText="{{ btnText }}"
+            ></app-button>
+        </div> 
     </li>
 </ul>
 
+
+<!-- <li *ngFor="let movie of movies">
+        
+        <div class="btn-container">
+            <app-button 
+            (btnClick)="markWatched(movie)"
+            btnColor="{{ watchedBtnColor }}" 
+            btnText="{{ watchedBtnText }}">
+            </app-button>
+            <app-button 
+            (btnClick)="removeFromList(movie)"
+            btnColor="{{ btnColor }}" 
+            btnText="{{ btnText }}">
+            </app-button>
+        </div>
+        
+    </li> -->
 <!-- <app-search-movie-list
     (movies)="movies"
     (onSearchMovies)="searchMovies(title)"

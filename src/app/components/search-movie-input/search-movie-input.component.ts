@@ -10,7 +10,7 @@ export class SearchMovieInputComponent implements OnInit {
   
   @Output() onSearchMovies: EventEmitter<string> = new EventEmitter;
   title: string;
-  btnColor: string = 'green'
+  btnColor: string = '#EEB868'
 
   constructor() { }
 
@@ -20,6 +20,7 @@ export class SearchMovieInputComponent implements OnInit {
   submitSearch() {
     if(!this.title){
       alert('Please enter a search term')
+      return
     }
     
     this.onSearchMovies.emit(this.title)

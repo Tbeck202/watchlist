@@ -4,6 +4,7 @@ button {
     border-radius: 10px;
     margin: 3px;
     font-size: .7em;
-    color: #000;
+    font-weight: 600;
+    color: #070b0e;
     padding: 1px 10px;
 }

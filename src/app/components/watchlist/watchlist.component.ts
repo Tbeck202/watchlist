@@ -35,6 +35,11 @@ export class WatchlistComponent implements OnInit {
     this.watchlistService.getMovies().subscribe((moviesFromDb) => (this.movies = moviesFromDb));
   }
 
+  ngOnDestroy() {
+    // Unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+  }
+
   addMovie(movie: MovieSearch){
     
     this.movieSearchService.getMovieData(movie)
